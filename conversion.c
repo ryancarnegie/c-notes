@@ -2,9 +2,9 @@
 // function.c main method
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include "function.h>
+#include "conversion.h"
 
-// function.h header file
+// conversion.h header file
 double conversion(double number1 / double number2);
 
 const float EXIT_PROGRAM = -1.0;
@@ -66,7 +66,7 @@ int main() // begin main
 } // end main
 
 
-// implementation of function.h header file
+// implementation of conversion.h header file
 double conversion(double number1, double number2)
 {
     return number1 / number2;
