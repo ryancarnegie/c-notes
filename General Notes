@@ -1,7 +1,6 @@
 char and integer are compatible
 All characters are an integer value of 0 to 128 for the normal ascii character values as an unsigned integer
 
-
 size_t represents an unsigned integral type recommended for variables representing an array's size or subscripts
 size_t is defined in header <stddef.h>
 size_t is converted with specificion %zu
@@ -15,7 +14,37 @@ while (s--) {
 putchar(x);
 }
 
-getchar() gives back the ASCII code of the character that it returned. it returns 1 integer.
+getchar() gives back the ASCII code of the character that it returned. it returns 1 integer. however, if multiple characters are pressed, it will stack them up until the end of file, which is character ascii value 10. 
+
+return -1 in C means it didn't find anything, therefore a bad character.
+
+
+Function Pointers
+-----------------
+
+int sum(int x, int y) {
+  return x + y;
+}
+
+int prod(int x, int y) {
+  return x * y;
+}
+
+void shoudNotBeChanged(int (*operation)(int, int)) {
+  srand(time(NULL));
+  int a = rand() % 100;
+  int b = rand() % 100;
+  printf("Result between %d and %d is %d\n", a, b, operation(a, b));
+}
+
+int main() {
+  shouldNotBeChanged(*sum);
+}
+
+-----------------
+
+
+
 
 
 
