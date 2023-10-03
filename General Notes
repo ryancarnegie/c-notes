@@ -17,6 +17,17 @@ getchar() gives back the ASCII code of the character that it returned. it return
 However, if multiple characters are pressed, it will stack them up until the end of file, which is character ascii value 10. 
 Return -1 in C means it didn't find anything, therefore a bad character.
 
+Double quotes for string literals. Single quotes for single character.
+int n[SIZE] = { 12, 15, 11, 7, 16 };
+printf("%s%13s%17s\n", "Element", "Value", "Bar Chart\n");
+for (size_t i = 0; i < SIZE; i++) { // size_t for the array.
+	printf("%7zu%13d%8s", i, n[i], "");
+	for (int j = 1; j <= n[i]; ++j) {
+		printf("%c", '*');
+	}
+}
+
+
 
 Function Pointers
 -----------------
