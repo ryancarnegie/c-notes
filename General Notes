@@ -1,1 +1,21 @@
+char and integer are compatible
+All characters are an integer value of 0 to 128 for the normal ascii character values as an unsigned integer
+
+
+size_t represents an unsigned integral type recommended for variables representing an array's size or subscripts
+size_t is defined in header <stddef.h>
+size_t is converted with specificion %zu
+
+char c one spot in memory - add 3 characters into that and it does out of bounds. 
+getchar() returns 1 character. 
+int s = 13; // type 13 things
+int x;
+while (s--) {
+  x = getchar(x);
+putchar(x);
+}
+
+getchar() gives back the ASCII code of the character that it returned. it returns 1 integer.
+
+
 
