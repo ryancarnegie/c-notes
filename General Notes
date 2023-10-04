@@ -1,6 +1,14 @@
 %s13 is saying it's a field size of 13 that'll be displayed.
 Inline option is available in C and C++ as well.
 
+int maximum(int x, int y, int z);
+The parameters to maximum are three ints.
+scanf("%d%d%d", &number1, &number2, &number3);
+The arguments to maximum in main when we invoke or call it are number1, number2, and number3.
+The values passed are the arguments, the type that the function is expecting is the parameters.
+The parameters are through the ints of this function prototype.
+The 3 arguments passed to maximum are passed by value. 
+
 Function Prototypes
 -------------------
 int square(int number);  // function prototype
