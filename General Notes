@@ -27,6 +27,21 @@ for (size_t i = 0; i < SIZE; i++) { // size_t for the array.
 	}
 }
 
+----------------
+Random in C
+scale	shift 	1-6
+rand()%6 // rand modulus 6 add one
+rand()%6 + 1
+0 <------> 5
+v	   v
+1 <------> 6
+for (int i = 5; i <= 5; i++) {
+	printf("%d ", 1 + (rand() % 6)); // output 6 6 5 5 6 every time
+} 
+// having the same output can be a good thing for debugging.
+We get the same results every time we run it because we are running the exact same code.
+Even though this rand is supposed to be generating random values, and to some degree it
+does, it's generating the _same_ random values every time. 
 
 
 Function Pointers
