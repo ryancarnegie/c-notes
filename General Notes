@@ -22,6 +22,21 @@ In C the only way you can pass by reference is by using pointers.
 
 Array names are pointers. 
 
+
+Storage Classes
+-------------------
+C provides storage-class specifiers
+	auto
+	register
+	extern
+	static
+A storage class determines an identifier's storage duration, scope, and linkage.
+Storage duration is the period during which an identifier exists in memory.
+Scope determines where a program can reference an identifier.
+Labels are identifiers followed by a colon such as start:
+Labels are the only thing that have function scope. Labels are used in goto statements.
+
+
 Function Prototypes
 -------------------
 int square(int number);  // function prototype
