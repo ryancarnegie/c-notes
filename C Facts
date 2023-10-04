@@ -4,4 +4,3 @@ Lines beginning with # are processed at preprocessor time
 <stdio.h> is not required
 Every variable has attributes of type, value, name, but not alias
 Operator precedence is asterisk, percentage, forward slash, plus, minus, and equals
-
