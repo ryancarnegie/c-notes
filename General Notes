@@ -8,6 +8,19 @@ The arguments to maximum in main when we invoke or call it are number1, number2,
 The values passed are the arguments, the type that the function is expecting is the parameters.
 The parameters are through the ints of this function prototype.
 The 3 arguments passed to maximum are passed by value. 
+printf("Maximum is: %d\n", maximum(number1, number2, number3);
+Maximum returns 1 int, so it prints 1 int with %d. It will return the max of the three values.
+
+When you pass by value you are passing a copy, not the original.
+When you pass by reference you pass the original.
+If I give a friend a 1000 dollar bill that asks to see it, I give him the 1000 dollar bill.
+That is passed by reference, because I gave him the original 1000 dollar bill. Once he is done
+with the bill, another person overhears this conversation and asks to see the 1000 dollar bill.
+I do not know this person and do not trust them compared to my friend, so I give him a photocopy
+of the 1000 dollar bill, and I give him the copy. That is passed by value.  
+In C the only way you can pass by reference is by using pointers.
+
+Array names are pointers. 
 
 Function Prototypes
 -------------------
