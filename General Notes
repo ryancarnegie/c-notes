@@ -1,3 +1,25 @@
+%s13 is saying it's a field size of 13 that'll be displayed.
+Inline option is available in C and C++ as well.
+
+Function Prototypes
+-------------------
+int square(int number);  // function prototype
+The prototype only says what the name of the function is, what the parameters are,
+what type they are and what order they are if there's more than one, 
+example int and a double, and what type is returned. 
+	- what the name of the function is
+	- what the parameters are
+	- what type is returned
+
+int square(int number) { // implementation below main
+	return number * number;
+}
+The prototype is only necessary if the implementation is below the main.
+If the implementation is above the main, the prototype is not necessary.
+The compiler would know all about the function including what it does.
+Functions can be implemented in separate .c files.
+
+
 char and integer are compatible. All characters are an integer value of 0 to 128 for the normal ascii character values as an unsigned integer.
 
 size_t represents an unsigned integral type recommended for variables representing an array's size or subscripts
@@ -28,9 +50,10 @@ for (size_t i = 0; i < SIZE; i++) { // size_t for the array.
 }
 
 ----------------
-Random in C
+Random in C - included in <stdlib.h> library
 scale	shift 	1-6
 rand()%6 // rand modulus 6 add one
+// Whatever the mod number is is how many numbers you will generate.
 rand()%6 + 1
 0 <------> 5
 v	   v
@@ -41,7 +64,56 @@ for (int i = 5; i <= 5; i++) {
 // having the same output can be a good thing for debugging.
 We get the same results every time we run it because we are running the exact same code.
 Even though this rand is supposed to be generating random values, and to some degree it
-does, it's generating the _same_ random values every time. 
+does, it's generating the same random values every time. 
+When rand is invoked the first time, it produces a random number.
+It uses a formula, a table lookup, and it also uses the seed.
+rand() --> rand #1 
+rand() --> rand #2 // uses the same formula, uses the same table, but does not use the same seed.
+// #2 uses the seed as the previous seed
+rand() --> rand #3 // when called the third time, it uses the same seed as #2
+These rands produce the original value produced by rand, before doing any scaling on it.
+
+If you need to seed the random number generator, only do it once at the top.
+printf("%s", "Enter seed: ");
+int seed = 0;
+scanf("%d", &seed);
+srand(seed); // seed the random number generator
+To randomize without entering a seed each time, use a statement like:
+srand(time(NULL));
+This causes the computer to read its clock to obtain the value for a seed automatically.
+Function time returns the number of seconds that have passed since midnight on January 1st, 1970.
+The function prototype for time is in <time.h>
+
+
+5 <---------------> 20
+If you want random values between 5 and 20, subject the smaller from the larger, it would be 15.
+It's not 15, it is 16. 
+rand() % 16 // values from 0 to 15. It adds 1.
+0 <---------------> 15
+rand() % 16 + 5
+5 <---------------> 20
+
+-5 to +5
+rand() % 11 // 11 values in total including 0. 0 counts as one of the values.
+-5 to +5 needs 10 + 1 values to include the 0.
+rand() % 11
+0 <--------> 10 // this gives us 0 to 10, but we want -5 to +5.
+Subtract 5
+-5 <-------> 5
+rand() % 11 - 5
+
+3, 5, 7, 9, 11 // I want to randomly generate these values.
+rand() % 5 // count the total number of values on the line above.
+0, 1, 2, 3, 4  // these are the values that we now have with % 5.
+But we want 3, 5, 7, 9, and 11.
+Multiply the modulos 5 by 2.
+0, 2, 4, 6, 8
+Then add 3.
+1, 5, 7, 9, 11
+rand() % 5 * 2 + 3;
+
+
+
 
 
 Function Pointers
