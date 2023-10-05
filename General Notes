@@ -1,4 +1,36 @@
 %s13 is saying it's a field size of 13 that'll be displayed.
+
+-------------------
+Conversion types:
+Data type	printf conversion specification		scanf conversion specification
+long double	%lf					%Lf
+double 		%f					%lf
+float		%f					%f
+
+Integer types
+Data type		printf conversion specification		scanf conversion specification
+unsigned long long int	%llu					%llu
+long long int		%lld					%lld
+unsigned long int	%lu					%lu
+long int		%ld					%ld
+unsigned int		%u					%u
+int 			%d					%d
+unsigned short		%hu					%hu
+short			%hd					%hd
+char			%c					%c
+
+double and float are the same with a print conversion specification in C.
+They are not the same for scanf. They have to be different, and that is because what you pass to
+scanf is an address, and you can't tell by looking at the address whether it's a double or a float.
+It tells whether it's a double or a float by the conversion specification. 
+scanf is given an address with the address of operator. 
+
+
+sizeof long double returns an integer value 
+
+
+
+-------------------
 Inline option is available in C and C++ as well.
 
 int maximum(int x, int y, int z);
