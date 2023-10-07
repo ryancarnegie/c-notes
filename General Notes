@@ -24,10 +24,13 @@ They are not the same for scanf. They have to be different, and that is because 
 scanf is an address, and you can't tell by looking at the address whether it's a double or a float.
 It tells whether it's a double or a float by the conversion specification. 
 scanf is given an address with the address of operator. 
+array names are pointers.
 
 
-sizeof long double returns an integer value 
-
+sizeof long double returns an integer value.
+sizeof returns the size of something in bytes. an object's or type's size in bytes.
+sizeof returns as a sze_t value the array's total number of bytes.
+sizeof is a compile-time operator, so it does not incur any execution-time overhead (except for VLAs).
 
 
 -------------------
@@ -211,4 +214,26 @@ int main() {
 
 
 
+Pointer Arithmetic Operators
+-----------------
+Assigning Pointers to one another
+	* Pointers of the same type may be assigned to one another
+int arr[20] = {5, 10, 15, ...};
+index   0		1		2		3		4		5		6
+arr 	5, 		10, 	15, 	20, 	25, 	30, 	35
+	 1000		1004	1008	100C	1010	1014	1018
+
+int* iPtr1 = &arr[0];   -> same resuult == 1000
+    	   = arr;		-> same resuult == 100
+++iPtr1; // 1004 //iPtr1 is a pointer to ints. It starts at 1000.
+Pointer offset notation.
+Display iPtr1[2];
+
+
+int arr[20] = { 5, 10, 15, 20, 25, 30, 35 };
+int* iPtr1 = &arr[0];
+++iPtr1;
+printf("%zu\n", iPtr1[2]);
+int* iPtr2 = arr[5]; 
+// Could also go arr + 5 instead of arr[5] because it moves ahead 5 elements.
 
