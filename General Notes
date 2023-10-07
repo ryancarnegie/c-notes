@@ -219,9 +219,9 @@ Pointer Arithmetic Operators
 Assigning Pointers to one another
 	* Pointers of the same type may be assigned to one another
 int arr[20] = {5, 10, 15, ...};
-index   0		1		2		3		4		5		6
-arr 	5, 		10, 	15, 	20, 	25, 	30, 	35
-	 1000		1004	1008	100C	1010	1014	1018
+index   0	1	2	3	4	5	6
+arr 	5, 	10, 	15, 	20, 	25, 	30, 	35
+	1000	1004	1008	100C	1010	1014	1018
 
 int* iPtr1 = &arr[0];   -> same resuult == 1000
     	   = arr;		-> same resuult == 100
