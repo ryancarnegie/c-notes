@@ -125,6 +125,8 @@ for (size_t i = 0; i < SIZE; i++) { // size_t for the array.
 
 
 
+
+
 Random 
 ----------------
 Random in C - included in <stdlib.h> library
@@ -252,23 +254,71 @@ What is stored in each one?
 Stack			|        The static data area        |       The Heap
 automatic variables	| global and static local variables  | dynamically allocated variables using the functions malloc, calloc, and realloc.
 
+The Stack:
+Automatic variables - variables stored in a block.
+
+The Static Data Area:
+global and static local variables stored here.
+
+The Heap:
+Dynamically allocated variables stored here such as: malloc(), calloc(), and realloc().
+
+In Java or C# when using the new operator to create objects, 
+those objects are created on the heap.
+The references for where you store where these objects are on the heap, are stored on the stack. 
+References for those new objects are stored on the stack. 
+
 If it doesn't have static in front, and is not a global, then it's an automatic.
 Static local variables are initialized once. 
 
-
-The Stack:
-Automatic variables
-
-The Static Data Area:
-global and static local variables
-
-The Heap:
-Dynamically allocated variables using:
-malloc(), calloc(), and realloc().
-In Java and C# when you use the new operator to create objects, those objects are created on the heap.
-The references for where you store where these objects are on the heap, are stored on the stack. 
-References for those objects are stored on the stack. 
-							
-
 Global variables are always created before main starts execution. 
+
+If we define an array the way we define most variables in C which is in a block, those are stored on the stack.
+If you don't specify it's a global, which is outside the function, or you don't use the static keyword, 
+and you don't allocate the memory dynamically using malloc, calloc or realloc, then it's an automatic. 
+Automatics are stored on the stack.
+
+Arrays explaining bytes and the stack:
+c[0],   c[1],   c[2],   c[3],   c[4]
+-45	6	0	72	1543
+
+int x = 10;
+int arr[6] = {10, 20, 30, 40};
+...
+...
+...
+arr[3] = 100;
+arr + 3 x 4;
+
+stack pointing down: (middle number is the stack)
+x	| 10	| indexes below for the array
+arr	| 10	| 0
+	| 20	| 1
+	| 30 	| 2
+	| 40	| 3
+	| 50	| 4
+	| 60	| 6
+
+The address of the very first number in the array is the address that is stored in memory.
+The address 10 memory location for the array is what is stored in arr.
+They have to be contiguous in memory. Arrays all have to be the same type because they have to be the same size.
+If 10 is 4 bytes, then 20 must be 4 bytes, and 30 must be 4 bytes, and so on.
+The reason for that is if we change arr[3] = 100.
+So if arr[3] started at 40 as it does in the array above, then by changing index [3] to 100, 
+the compiler has to write code to get us to the correct location of index 3, and the way it does that,
+it says we start at the address stored in arr, which is the beginning of the 10 where the first byte is,
+the address stored in arr is the address of the very first byte, then the compiler will go:
+arr + 3 times the size of each element. It starts at 10, then goes 3 positions ahead times 4 bytes memory for each,
+so it becomes arr + 3 x 4 = 12 bytes ahead. 
+
+
+End stack and heap
+------------------------------------------
+
+
+
+Using Character Arrays to Store and Manipulate Strings
+------------------------------------------------------
+
+
 
