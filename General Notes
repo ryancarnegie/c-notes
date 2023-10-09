@@ -1,7 +1,8 @@
 %s13 is saying it's a field size of 13 that'll be displayed.
 
+
+Conversion types
 -------------------
-Conversion types:
 Data type	printf conversion specification		scanf conversion specification
 long double	%lf					%Lf
 double 		%f					%lf
@@ -33,6 +34,7 @@ sizeof returns as a sze_t value the array's total number of bytes.
 sizeof is a compile-time operator, so it does not incur any execution-time overhead (except for VLAs).
 
 
+Random Facts
 -------------------
 Inline option is available in C and C++ as well.
 
@@ -54,7 +56,6 @@ with the bill, another person overhears this conversation and asks to see the 10
 I do not know this person and do not trust them compared to my friend, so I give him a photocopy
 of the 1000 dollar bill, and I give him the copy. That is passed by value.  
 In C the only way you can pass by reference is by using pointers.
-
 Array names are pointers. 
 
 
@@ -70,6 +71,7 @@ Storage duration is the period during which an identifier exists in memory.
 Scope determines where a program can reference an identifier.
 Labels are identifiers followed by a colon such as start:
 Labels are the only thing that have function scope. Labels are used in goto statements.
+
 
 
 Function Prototypes
@@ -91,8 +93,9 @@ The compiler would know all about the function including what it does.
 Functions can be implemented in separate .c files.
 
 
+size_t
+-----
 char and integer are compatible. All characters are an integer value of 0 to 128 for the normal ascii character values as an unsigned integer.
-
 size_t represents an unsigned integral type recommended for variables representing an array's size or subscripts
 size_t is defined in header <stddef.h>
 size_t is converted with specificion %zu
@@ -120,6 +123,9 @@ for (size_t i = 0; i < SIZE; i++) { // size_t for the array.
 	}
 }
 
+
+
+Random 
 ----------------
 Random in C - included in <stdlib.h> library
 scale	shift 	1-6
@@ -189,7 +195,6 @@ rand() % 5 * 2 + 3;
 
 Function Pointers
 -----------------
-
 int sum(int x, int y) {
   return x + y;
 }
@@ -236,4 +241,34 @@ int* iPtr1 = &arr[0];
 printf("%zu\n", iPtr1[2]);
 int* iPtr2 = arr[5]; 
 // Could also go arr + 5 instead of arr[5] because it moves ahead 5 elements.
+
+
+
+
+Stack, Static Data Area, Heap
+-----------------------------
+
+What is stored in each one?
+Stack			|        The static data area        |       The Heap
+automatic variables	| global and static local variables  | dynamically allocated variables using the functions malloc, calloc, and realloc.
+
+If it doesn't have static in front, and is not a global, then it's an automatic.
+Static local variables are initialized once. 
+
+
+The Stack:
+Automatic variables
+
+The Static Data Area:
+global and static local variables
+
+The Heap:
+Dynamically allocated variables using:
+malloc(), calloc(), and realloc().
+In Java and C# when you use the new operator to create objects, those objects are created on the heap.
+The references for where you store where these objects are on the heap, are stored on the stack. 
+References for those objects are stored on the stack. 
+							
+
+Global variables are always created before main starts execution. 
 
