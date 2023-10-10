@@ -8,12 +8,7 @@ void useGlobal(void);
 
 int x = 1;
 
-int main(void) {
-
-	//printf("%s", "Enter the size of a one-dimensional array: ");
-	int arraySize = 0;
-	//scanf("%d", &arraySize);
-	
+int main(void) {	
 	useLocal();
 	useStaticLocal();
 	useStaticLocal();
@@ -45,3 +40,37 @@ void useGlobal(void) {
 	x *= 10;
 	printf("\nGlobal x is %d before exiting useGlobal\n", x);
 }
+
+-------------------------------------
+Static Array Init
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void staticArrayInit(void);
+
+int main(void) {
+	staticArrayInit();
+	return 0;
+}
+
+void staticArrayInit(void) {
+	static int array1[3] = { 1, 2, 3 };
+
+	puts("\nValues on entering staticArrayInit: ");
+	for (size_t i = 0; i <= 2; ++i) {
+		printf("array[%zu] = %d ", i, array1[i]);
+	}
+	puts("\nValues on exiting staticArrayInit: ");
+
+	for (size_t i = 0; i <= 2; ++i) {
+		printf("array[%zu] = %d ", i, array1[i] += 5);
+	}
+}
+
+Output:
+
+Values on entering staticArrayInit:
+array[0] = 1 array[1] = 2 array[2] = 3
+Values on exiting staticArrayInit:
+array[0] = 6 array[1] = 7 array[2] = 8
