@@ -313,12 +313,32 @@ so it becomes arr + 3 x 4 = 12 bytes ahead.
 
 
 End stack and heap
-------------------------------------------
+
 
 
 
 Using Character Arrays to Store and Manipulate Strings
 ------------------------------------------------------
+char strin1[] = "first"; initializes the elements of array string1 to the individual characters in the string literal "first".
+Size is based on the string's length.
+The string "first" contains five characters plus a string-terminating null character, string1 actually contains six elements.
+All strings end with the \0 (null) character.
+A character array representing a string should always be defined large enough to hold the string's number of characters and the terminating null character.
 
+| 0000 0000 | 
+char digit;
+int d = digit - 48;
+48 - 48 = 0 character digit 0
+49 - 48 = 1
+The null terminating character is a signal that you've reached the end of the string.
+0 == NULL == '\0' //without the backslash, the 0 would be the ASCII value for 0, which is 48.
+
+char string2[20];
+scanf("%19s", string2);  
+The reason we put 19 instead of 20 is because scanf automatically puts a null at the end.
+If we allowed 20 characters to be read in and a null at the end that would take up 21 
+characters and that would overwrite the end of our array - the array of chars.
+Remember: array names are pointers.
+To display the contents of a string without a loop by using %s\n, string2.
 
 
