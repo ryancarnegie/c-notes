@@ -32,6 +32,8 @@ sizeof long double returns an integer value.
 sizeof returns the size of something in bytes. an object's or type's size in bytes.
 sizeof returns as a sze_t value the array's total number of bytes.
 sizeof is a compile-time operator, so it does not incur any execution-time overhead (except for VLAs).
+size_t is based on another type - usually an unsigned int, it will be unsigned.
+
 
 
 Random Facts
@@ -123,6 +125,18 @@ for (size_t i = 0; i < SIZE; i++) { // size_t for the array.
 	}
 }
 
+
+Arrays
+----------------
+Array names are pointers. 
+Pointers contain addresses. Pointers are used to store addresses.
+The address is displayed in hexadecimal - base 16.
+A hex digit which is base 16, goes from 0 to 15. It goes back to 0 again after F.
+4 bits can be represented by exactly one hex digit. 
+If you output a 32-bit address, 4 into 32 goes 8 hex digits.
+If you represent a 64-bit address, 4 goes into 64 16 times, it will display 16 hex digits/base 16 digits.
+
+%p outputs addresses as hexadecimal - this is compiler dependent.
 
 
 
@@ -340,5 +354,19 @@ If we allowed 20 characters to be read in and a null at the end that would take 
 characters and that would overwrite the end of our array - the array of chars.
 Remember: array names are pointers.
 To display the contents of a string without a loop by using %s\n, string2.
+
+----
+static array init
+
+static int array1[3]; static array of ints. static arrays are automatically initialized to 0. That's only because it's a static array.
+Reminder: When passing arrays by reference, you are not passing a copy, you are passing the original.
+If you have an array and try to pass by value (a copy), first of all you have to find room in the function you 
+are calling for a copy of the array, and then you to copy the values from the function that's doing the calling to the function that's being called,
+and if it's a large array it can take a long time to copy all the values over. 
+In C, the way we pass array names is by pointers. We always pass arrays by pointers.
+
+
+
+
 
 
