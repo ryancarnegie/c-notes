@@ -1,6 +1,7 @@
-The compiler creates object code and stores it on disk
-The linker creates an executable image
-Lines beginning with # are processed at preprocessor time
-<stdio.h> is not required
-Every variable has attributes of type, value, name, but not alias
-Operator precedence is asterisk, percentage, forward slash, plus, minus, and equals
+The compiler creates object code and stores it on disk.
+The linker creates an executable image.
+Lines beginning with # are processed at preprocessor time.
+<stdio.h> is not required.
+Every variable has attributes of type, value, name, but not alias.
+Operator precedence is asterisk, percentage, forward slash, plus, minus, and equals.
+Memory is organized row by row.
