@@ -211,7 +211,6 @@ This causes the computer to read its clock to obtain the value for a seed automa
 Function time returns the number of seconds that have passed since midnight on January 1st, 1970.
 The function prototype for time is in <time.h>
 
-
 5 <---------------> 20
 If you want random values between 5 and 20, subject the smaller from the larger, it would be 15.
 It's not 15, it is 16. 
@@ -239,6 +238,32 @@ Then add 3.
 1, 5, 7, 9, 11
 rand() % 5 * 2 + 3;
 
+
+
+Pointers
+--------
+Pointers have one use and one use only - that is to store an address.
+Every instruction has its own unique address, every variable has its own unique address.
+When we pass by reference, what we do is pass the address if whatever it is we want to pass by reference.
+The receiving function can go directly to that address and read the value or modify the value.
+In C, the only way to pass by reference is using pointers. 
+
+x: 10	10FE0		int x = 10;
+	...		int * iPtr = NULL; // this * is a definition, it is defining iPtr 
+iPtr	10FE3		iPtr = &x; 	   // "address of" operator
+	10FE4		display x; 	   // displays 10
+	...		display iPtr	   // displays 10FE0, this is stored in iPtr
+	10FE7		display *iPtr	   // the * here is the indirection operator. we are using iPtr, but iPtr already exists, 
+					   // the * above is now used in an executable statement.
+					   // the indirection operator dereferences the pointer. 
+Dereference means it goes to where the pointer is pointing, it references the value that's there, which is 10.
+It will output 10.
+			*iPtr = 20;	   // indirection operator on iPtr, left hand side of assignment operator.
+				 	   // assigns 20 to x.
+			This assignment using * is the same as display *iPtr. 
+			display &iPtr;	   // where is iPtr stored in memory? the very first byte.
+					   // 10FE4 will be output.
+			double *dPtr, dPtr2 // dPtr2 will be a regular double unless it has an * in front.
 
 
 
@@ -279,7 +304,7 @@ arr	5, 	10, 	15, 	20, 	25, 	30, 	35
 	1000	1004	1008	100C	1010	1014	1018
 
 int* iPtr1 = &arr[0];   -> same resuult == 1000
-    	   = arr;		-> same resuult == 100
+    	   = arr;	-> same resuult == 100
 ++iPtr1; // 1004 //iPtr1 is a pointer to ints. It starts at 1000.
 Pointer offset notation.
 Display iPtr1[2];
