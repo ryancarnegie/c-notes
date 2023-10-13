@@ -138,6 +138,40 @@ If you represent a 64-bit address, 4 goes into 64 16 times, it will display 16 h
 
 %p outputs addresses as hexadecimal - this is compiler dependent.
 
+The 2d is actually a one dimensional array in memory, where one row ends, another row starts.
+
+
+int arr[10]; if we start with an array, and we want to pass this array to a function such as:
+	 an array of ints
+	 row       size
+void func(int a[], size_t sz)
+We need the subscript brackets but we don't specify the size, the value is ignored, other than to make sure it's greater than 0.
+If we had a 2 dimensional array below:
+        rows, columns
+int arr2[3][4];  
+void func2(int b[][4], size_t nRows) // when passing the array one line above to this function, we do not need to specify the number of rows, we do need to specify the columns.
+The 2d array must have 4 columns for it to work. 
+	b[1][2] = 20; // stores 20 in 1, 2
+	location = starting loc + row * numberofcols + col
+				  1   * 4            + 2   = 6 locations further than the start
+
+	Column 0	Column 1	Column 2	Column 3
+Row 0	a[0][0]		a[0][1]		a[0][2]		a[0][3]
+Row 1	a[1][0]		a[1][1]		a[1][2]		a[1][3]
+Row 2	a[2][0]		a[2][1]		a[2][2]		a[2][3]
+
+Can initialize a multidimensional array when it's defined:
+int array[2][2] = {{1, 2}, {3, 4}};
+Then looped with a nested for loop.
+void printArray(int a[][3]) {
+	for (size_t r = 0; r <= 1; ++r) {
+		for (size_t c = 0; c <= 2; ++c) {
+			printf("%d ", a[r][c]);
+		}
+		puts("");
+	}
+}	
+
 
 
 
