@@ -244,7 +244,7 @@ Pointers
 --------
 Pointers have one use and one use only - that is to store an address.
 Every instruction has its own unique address, every variable has its own unique address.
-When we pass by reference, what we do is pass the address if whatever it is we want to pass by reference.
+When we pass by reference, what we do is pass the address of whatever it is we want to pass by reference.
 The receiving function can go directly to that address and read the value or modify the value.
 In C, the only way to pass by reference is using pointers. 
 
