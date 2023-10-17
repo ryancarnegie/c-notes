@@ -3,7 +3,7 @@
 void swap(int* const, int* const); // prototype
 
 int main(void) {
-  int first = 50;
+  int first = 5;
   int second = 100;
   swap(&first, &second);
   printf("first = %d : second = %d\n", first, second);
