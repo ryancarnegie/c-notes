@@ -427,5 +427,40 @@ In C, the way we pass array names is by pointers. We always pass arrays by point
 
 
 
+Strings
+
+Some built-in functions:
+isdigit	iscntrl	isspace	islower	isupper
+isalpha	ispunct	isgraph	toupper	
+isalnum	
+
+char s1[20] = "Happy ";
+char s2[] = "New Year ";
+char s3[40] = "";
+strcat concatenates all of s2 to s1
+
+printf("strcat(s1, s2) = %s\n", strcat(s1, s2)); //output: happy new year
+printf("strncat(s3, s1, 6) = %s\n", strncat(s3, s1, 6)); //removes 6 characters: output: happy
+printf("strcat(s3, s1) = %s\n", strcat(s3, s1)); // output: happy happy new year
+
+strcat strncat strlen
+
+
+All lowercase letters have a 
+
+Three different functions that convert a string into a numeric value.
+C standard includes strtoll (signed long long), strtoull (unsigned long long).
+The three we need are:
+
+double strtod(const char *nPtr, char **endPtr);						Converts the string nPtr to double
+long strtol(const char *nPtr, char **endPtr, int base);				Converts the string nPtr to long.
+unsigned long strtoul (const char *nPtr, char **endPtr, int base);	Converts the string nPtr to unsigned long.
+
+
+
+
+
+
+
 
 
