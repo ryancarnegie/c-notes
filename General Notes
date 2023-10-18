@@ -446,7 +446,9 @@ printf("strcat(s3, s1) = %s\n", strcat(s3, s1)); // output: happy happy new year
 strcat strncat strlen
 
 
-All lowercase letters have a 
+
+
+All lowercase letters have a higher value than uppercase. Uppercase A = 65, lowercase a = 97.
 
 Three different functions that convert a string into a numeric value.
 C standard includes strtoll (signed long long), strtoull (unsigned long long).
