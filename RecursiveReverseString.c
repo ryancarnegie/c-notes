@@ -4,7 +4,6 @@
 void reverse(const char* const sPtr);
 
 int main(void) {
-
 	char sentence[80] = "";
 	puts("Enter a line of text: ");
 	fgets(sentence, 80, stdin); // reads a line of text
