@@ -459,6 +459,16 @@ long strtol(const char *nPtr, char **endPtr, int base);				Converts the string n
 unsigned long strtoul (const char *nPtr, char **endPtr, int base);	Converts the string nPtr to unsigned long.
 
 
+Search Functions
+---------
+char *strchr(const char *s, int c);
+size_t strcspn (const char *s1, const char *s2);
+
+strstr returns the address of the first occurrence of a substring in a string.
+const char *string1 = "adcdef";
+const char *string2 = "def";
+printf("The first occurrence is: "
+
 Week 5
 
 stdio is a file pointer that you automatically have acccess to when you include stdio.h.
