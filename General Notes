@@ -266,8 +266,6 @@ It will output 10.
 			double *dPtr, dPtr2 // dPtr2 will be a regular double unless it has an * in front.
 
 
-
-
 Function Pointers
 -----------------
 int sum(int x, int y) {
@@ -289,9 +287,6 @@ int main() {
   shouldNotBeChanged(*sum);
 }
 -----------------
-
-
-
 
 
 Pointer Arithmetic Operators
@@ -316,8 +311,6 @@ int* iPtr1 = &arr[0];
 printf("%zu\n", iPtr1[2]);
 int* iPtr2 = arr[5]; 
 // Could also go arr + 5 instead of arr[5] because it moves ahead 5 elements.
-
-
 
 
 Stack, Static Data Area, Heap
@@ -388,8 +381,6 @@ so it becomes arr + 3 x 4 = 12 bytes ahead.
 End stack and heap
 
 
-
-
 Using Character Arrays to Store and Manipulate Strings
 ------------------------------------------------------
 char strin1[] = "first"; initializes the elements of array string1 to the individual characters in the string literal "first".
@@ -425,8 +416,6 @@ and if it's a large array it can take a long time to copy all the values over.
 In C, the way we pass array names is by pointers. We always pass arrays by pointers.
 
 
-
-
 Strings
 
 Some built-in functions:
@@ -444,8 +433,6 @@ printf("strncat(s3, s1, 6) = %s\n", strncat(s3, s1, 6)); //removes 6 characters:
 printf("strcat(s3, s1) = %s\n", strcat(s3, s1)); // output: happy happy new year
 
 strcat strncat strlen
-
-
 
 
 All lowercase letters have a higher value than uppercase. Uppercase A = 65, lowercase a = 97.
