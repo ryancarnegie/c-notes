@@ -459,6 +459,57 @@ long strtol(const char *nPtr, char **endPtr, int base);				Converts the string n
 unsigned long strtoul (const char *nPtr, char **endPtr, int base);	Converts the string nPtr to unsigned long.
 
 
+Week 5
+
+stdio is a file pointer that you automatically have acccess to when you include stdio.h.
+
+Function prototype		Function description
+int getchar(void);		Returns the next character from the standard input as an integer.
+char *fgets(char *s,		Reads characers from the specified stream into the array s
+	int n FILE *stream);	until a new line or EOF character is encountered, or until n-1
+				bytes are read. 
+int putchar(int c);		Prints the character stored in c and returns it as an integer.
+int puts(const char *s);	Prints the string s followed by a newline character. Returns a
+				nonzero integer if successful, or EOF if an error occurs.
+int sprintf(char *s, 
+	const char *format,..); Equivalent to printf, but the output is stored in the array s
+				instead of printed on the screen. Returns the number of characters
+				written to s, or EOF if an error occurs.
+int sscanf(char *s, 
+	const char *format,..); Equivalent to scanf, but the input is read from the array s rather
+				than from the keyboard. Returns the number of items successfully read
+				by the function, or EOF if an error occurs.
+fscannf();			Reads from a file instead of the keyboard.
+
+A recursive function automatically provides a stack for you.
+Chapter 6 in the textbook for recursion.
+// Using functions fgets and putchar
+Recursive function tests a base case
+Recursive function calls itself. If the base case is not true, then call the function again,
+and again we test for the base case, and if it's not true, test again and again. Keep calling
+until we reach the base case and do a return. This goes back to the most recent call, then do a
+return, and go back to the second most recent call, then the third most recent call.
+void reverse(const char* const sPtr);
+int main(void) {
+	char sentence[80] = "";
+	puts("Enter a line of text: ");
+	fgets(sentence, 80, stdin); // reads a line of text
+	printf("\n%s", "The line printed backwards is:");
+	reverse(sentence);
+	puts("");
+}
+
+void reverse(const char * const sPtr) {
+	if ('\0' == sPtr[0]) {
+	return;
+	}
+else {
+	reverse(&sPtr[1]);
+	putchar(sPtr[0]);
+   }
+}
+--------------
+
 
 
 
