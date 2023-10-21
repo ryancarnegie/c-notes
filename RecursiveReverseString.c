@@ -11,7 +11,7 @@ int main(void) {
 	printf("\n%s", "The line printed backwards is:");
 	reverse(sentence);
 	puts("");
-
+	
 	return 0;
 }
 
