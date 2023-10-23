@@ -1,0 +1,34 @@
+The order in which statements are to be executed in a computer program is called program control or control flow.
+The two key attributes of an algorithm are actions and order of actions.
+
+Pseudocode helps a programmer think out a program, but does not typically include definitions.
+
+Control structure encompasses sequence structure, selection structure, and repetition structure. 
+Normally, statements in a program are executed one after another in the order they are written, called sequential execution.
+C statements enable you to specify the next statement to be executed other than the next one in sequence, this is called transfer of control.
+
+The if statement is called a single-selection statement. The if else is called a double selection statement.
+An uninitialized variable contains the last value stored in the memory location reserved for that variable.
+
+Counter-controlled repetition is often called definite repetition,
+because the number of repetitions is known before the loop begins executing.
+
+Indefinite repetition is controlled by a sentinel value.
+In indefinite repetition, an input value should always be evaluated before being processed.
+
+Which operation does not take place in the following example?
+int x = 21;
+double y = 6;
+double z = 14;
+y = x / z;
+x = 5.5 * y;
+1) promotion
+2) implicit conversion
+3) truncation
+4) explicit conversion
+(4)
+
+----------------------
+
+
+
