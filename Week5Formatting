@@ -1,0 +1,16 @@
+%e for exponential
+printf("%e\n", 1234567.89); %e and %E output an upper or lowercase e, but does not affect the value. It's only for display.
+  output to console: 1.2345678e_06
+%e
+%E
+%f = fixed 
+%g = compiler decides whether it should be exponential or fixed
+%G = same as above = outputs: 1.234567E+06 even with %G
+
+Zero flag
+printf("%+09d\n", 452); output +00000452
+printf("%09d\n", 452);  output 000000452 // field width set to 9
+
+strtod splits the strings into decimal and string - it needs an end pointer as second argument.
+
+
