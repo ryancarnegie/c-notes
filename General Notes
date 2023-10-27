@@ -136,6 +136,22 @@ A hex digit which is base 16, goes from 0 to 15. It goes back to 0 again after F
 If you output a 32-bit address, 4 into 32 goes 8 hex digits.
 If you represent a 64-bit address, 4 goes into 64 16 times, it will display 16 hex digits/base 16 digits.
 
+Array Facts
+-----------
+Arrays are static entities in that they remain the same size throughout program execution.
+Arrays are group of memory locations related by the fact they all have the same array name 
+and the same data type.
+In the statement: ++frequency[responses[ answer ]];
+answer is used as an index to access the 'responses' array, which likely holds a set of answers
+or responses. The value obtained from responses[answer] is then used as an index to access the 
+frequency array, which typically represents a counter for each response. The ++ operator increments
+the counter associated with the response identified by responses[answer]. This is a common technique
+for tallying responses in surveys or similar applications.
+answer is a variable used as an index to access an element in the responses array. It retrieves a 
+specific response. responses[answer] is correct.
+
+
+
 %p outputs addresses as hexadecimal - this is compiler dependent.
 
 The 2d is actually a one dimensional array in memory, where one row ends, another row starts.
@@ -643,6 +659,11 @@ output: Of the characters in "beware" 'a' appears earliest in "This is a test"
 strcspn
 strcspn determines the length of the initial part of its first string argument that does not contain
 any characters from its second string argument. The function returns the segment's length.
+
+
+
+
+-----------------------------
 
 
 
