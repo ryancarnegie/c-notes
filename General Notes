@@ -416,7 +416,9 @@ and if it's a large array it can take a long time to copy all the values over.
 In C, the way we pass array names is by pointers. We always pass arrays by pointers.
 
 
+
 Strings
+#include <string.h>
 
 Some built-in functions:
 isdigit	iscntrl	isspace	islower	isupper
@@ -538,6 +540,11 @@ pointer to a block of memory that holds the copied data, and the data type of th
 memory block is determined by the caller. In other words, the memcpy function itself 
 doesn't know what data type it's copying; it just copies raw bytes.
 
+
+
+----------------------------
+Strings
+#include <string.h>
 
 
 strcat
