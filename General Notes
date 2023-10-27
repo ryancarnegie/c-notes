@@ -282,6 +282,12 @@ It will output 10.
 			double *dPtr, dPtr2 // dPtr2 will be a regular double unless it has an * in front.
 
 
+Pointers
+--------
+void can be assigned to a pointer of any type. a void* is a generic or untyped pointer that can point to objects of any type.
+
+
+
 Function Pointers
 -----------------
 int sum(int x, int y) {
