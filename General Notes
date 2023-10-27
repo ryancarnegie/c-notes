@@ -516,11 +516,126 @@ void *memchr (const void *s, int c, size_t n);
 *memset		Copies (converted to unsigned char) into the first n bytes of the object pointed to by s, then returns a pointer to the result.
 void *memset (void *s, int c, size_t n);
 
+
+memcpy
 *memcpy copes a specified number of bytes.
+memcpy copies a specified number of bytes from the object pointed to by its second argument into the one pointed to by its first argument.
+It can receive a pointer to any type of object. If two objects overlap, use memmove instead.
+	char string1[17] = "";
+	char string2[] = "Copy this string";
+	memcpy(string1, string2, 17);
+	puts(string1);
+
+void *memcpy(void *s1, const void *s2, size_t n);
+Copies n bytes from the object pointed to by s2 into the object pointed
+to by s1, then returns a pointer to the resulting object.
+When a function has a return type of void, it means that the function does not return any value to the caller. It doesn't produce a specific result.
+
+In the specific case of the memcpy function you mentioned earlier, 
+it returns a pointer to void (void*). This indicates that the function does return a result, 
+but the type of the result is unspecified. It's a way to indicate that memcpy returns a 
+pointer to a block of memory that holds the copied data, and the data type of that 
+memory block is determined by the caller. In other words, the memcpy function itself 
+doesn't know what data type it's copying; it just copies raw bytes.
 
 
 
+strcat
+strcat appends its second argument string to the string in its char array first arugment,
+replacing the first argument's null '\0' charater. you must ensure the array used to store
+the frist string is large enough to store the first second, the second string, and the null 
+terminating character copied from the second string.
 
+strncat appends a specified number of characters from the second string to the first string 
+and adds a terminating null character.
+char s1[20] = "Happy";
+char s2[] = "New Year ";
+char s3[40] = "";
+
+printf("%s\n", strcat(s1, s2));
+printf("%s\n", strncat(s3, s1, 6)); concatenate 6 characters of s1 to s3
+printf("%s\n", strcat(s3, s1);
+Outputs:
+s1 = Happy
+s2 = New Year
+strcat(s1, s2) = Happy New Year
+strncat(s3, s1, 6) = Happy
+strcat(s3, s1) = Happy Happy New Year
+
+
+
+strtok
+strtok breaks a string into a series of tokens also called tokenizing the string. A token is
+a sequence of characters separated by delimiters, such as spaces, or punctuation marks.
+char string[] = "This is a sentence with 7 tokens";
+char tokenPointer = strtok(string, " ");
+while (tokenPointer != NULL) {
+	printf("%s\n", tokenPointer);
+	tokenPointer = strtok(NULL, " ");
+}
+Multiple calls to strtok are required to tokenize a string, assuming it contains more than one token.
+
+
+strstr
+strstr searches for the first occurrence of its second string argument in its first string argument.
+If the second string is found in the first, strstr returns a pointer to the second string's location
+in the first. 
+const char* string3 = "abcdefabcdef";
+const char* string4 = "def";
+printf("The first occurrence is: %s\n", strstr(string3, string4));
+
+
+
+strspn
+strspn determines the length of the initial part of its first argument containing only characters 
+from the string in the second argument. It returns the length of the segment. length %zu
+const char* stringy1 = "the value of potato power is 3.14159 yes";
+const char* stringy2 = "aehi lstuv";
+printf("The length containing something something: %zu\n", strspn(stringy1, stringy2));
+output: 10
+
+
+
+strchr
+strchr researches for the first occurrence of a character in a string. If the character is found,
+strchr returns a pointer to the character in the string; otherwise strchr returns null.
+const char *string = "this is a string of words";
+char character1 = 'a';
+if (strchr(string, character1) != NULL) {
+	printf("'%c' was found in %s", character1, string);
+} else {
+	pritnf("'%c' was not found in %s", character1, string);
+}
+
+
+strrchr
+strrchr searches for the last occurrence of the specified character in a string. If the character
+is found, strrchr returns a pointer to the character in the string, otherwise, it returns NULL.
+const char* strrchrSearch = "a zoo has many animals including zebras";
+int c = 'z'; // character to search
+printf("%s '%c' %s\n", "Remainder of chrSearch beginning with last occurrence:", c, strrchr(strrchrSearch, c));
+Output: Remainder of chrSearch beginning with last occurrence: 'z' zebras
+
+
+
+strpbrk
+strpbrk searches its first string argument for the first occurrence of any character in its second string argument.
+If a character from the second argument is found, strpbrk returns a pointer to the character in the
+first argument; otherwise, it returns null.
+
+const char *string1 = "This is a test";
+const char *string2 = "beware";
+
+printf("%s\"%s\"\n'%c'%s \"%s\"\n", "Of the characters in ", string2, *strpbrk(string1, string2),
+ " appears earliest in ", string1);
+ }
+output: Of the characters in "beware" 'a' appears earliest in "This is a test"
+
+
+
+strcspn
+strcspn determines the length of the initial part of its first string argument that does not contain
+any characters from its second string argument. The function returns the segment's length.
 
 
 
