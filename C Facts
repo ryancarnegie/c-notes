@@ -5,3 +5,21 @@ Lines beginning with # are processed at preprocessor time.
 Every variable has attributes of type, value, name, but not alias.
 Operator precedence is asterisk, percentage, forward slash, plus, minus, and equals.
 Memory is organized row by row.
+sprintf stores its output in a character array.
+strncpy copies characters from one string another but not necessarily the null character.
+
+Given the strncpy statement above:
+Every function of the string handling library except for __________ appends the null character to its result.
+1) strcat
+2) strncpy
+3) strncat
+4) strcpy
+
+#2
+----
+
+strcmp returns 0 if its first argument is equal to its second argument,
+indicating that the two strings are the same. If not the same, it returns
+a value that is either positive or negative.
+
+
