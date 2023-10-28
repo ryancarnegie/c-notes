@@ -28,6 +28,13 @@ scanf is given an address with the address of operator.
 array names are pointers.
 
 
+In C, a void * (void pointer) cannot be directly dereferenced because 
+it does not have a specific data type associated with it. 
+The purpose of a void * pointer is to provide a generic pointer type 
+that can point to objects of different data types.
+
+
+
 sizeof long double returns an integer value.
 sizeof returns the size of something in bytes. an object's or type's size in bytes.
 sizeof returns as a sze_t value the array's total number of bytes.
@@ -652,6 +659,9 @@ strpbrk searches its first string argument for the first occurrence of any chara
 If a character from the second argument is found, strpbrk returns a pointer to the character in the
 first argument; otherwise, it returns null.
 
+Searches for the first occurrence in its first string argument of 
+any character in its second string argument.
+
 const char *string1 = "This is a test";
 const char *string2 = "beware";
 
@@ -662,9 +672,67 @@ output: Of the characters in "beware" 'a' appears earliest in "This is a test"
 
 
 
+strspn calculates the length of the initial string that consists of characters
+that match the specified set of characters. It returns the length of the substring
+that contains only characters from the set.
+
 strcspn
-strcspn determines the length of the initial part of its first string argument that does not contain
-any characters from its second string argument. The function returns the segment's length.
+strcspn determines the length of the initial part of its first string argument 
+that does not contain any characters from its second string argument. 
+The function returns the segment's length.
+
+
+
+
+strcmp returns 0 if its first argument is equal to its second argument, indicating that the two strings are the same. If the strings are not equal, it returns a value that is either negative or positive, depending on the lexicographical order of the characters that differ in the two strings.
+It will return specifically 0 if both strings are the same.
+
+
+strncmp compares up to n characters of its first argument with its second argument.
+
+
+Which function would be the most useful for determining if a certain 
+word is contained in a string representing a sentence?
+strstr
+
+
+Which function searches for the first occurrence in its first string 
+argument of any character in its second string argument?
+strpbrk
+
+
+Which function allows characters of one part of a string to be 
+copied into another part of the string?
+memmove
+memmove is used to copy a specified number of bytes from one location in 
+memory to another, even if the source and destination regions overlap.
+
+
+memcmp would return ___________ for the call
+memcmp("Hi, how are you?", "Hi, how are things?", 6);
+In this case, the first 6 characters of both strings are the same, 
+so memcmp would return 0 to indicate that the compared portions are equal.
+0
+
+
+To change the string "ABCDEFGHI" to "aaaaaFGHI" 
+you would use the _________ function.
+memset
+
+The memset function is used to set a block of memory with a specified value. 
+In this case, you want to fill the first 5 characters of the string with 
+'a' characters, which can be done using memset.
+
+
+memcpy
+Function memmove correctly handles the situation for which memcpy most 
+notably fails.
+In fact, it's the opposite. memmove is designed to handle situations 
+where the source and destination memory regions overlap, 
+ensuring a correct copy in such cases. memcpy, on the other hand, 
+can produce incorrect results if the source and destination overlap. 
+This is a key difference between the two functions.
+memcpy
 
 
 
