@@ -739,5 +739,137 @@ memcpy
 
 -----------------------------
 
+Chapter 10 Strings
+
+This is called a scan set.
+char z[12] = "";
+printf("%s", "Enter a string: ");
+scanf(%11[aeiou]", z);
+printf("The input was \"%s\"\n", z);
+It will output all matching letters.
+
+This is an inverted scan set - it finds the first instance not matching letters.
+char z[12] = "";
+printf("%s", "Enter a string: ");
+scanf(%11^[aeiou]", z);
+printf("The input was \"%s\"\n", z);
+It will output all letters not in the brackets until it finds them.
+
+char z[99] = "";
+printf("%s", "Enter a string: ");
+scanf(%99[^\n]", z);
+printf("The input was \"%s\"\n", z); // does not read the newline
+
+Inputting data with a field width.
+int x = 0;
+int y = 0;
+printf("%s", "Enter a six digit integer: ");
+scanf("%2d%d", &x, &y);
+printf("The integers input were %d and %d\n", x, y);
+
+Reading and discarding characters from the input stream
+int month = 0;
+int day = 0;
+int year = 0;
+printf("%s", "Enter a date in the form mm/dd/yyyy: ");
+scanf("%d/%d/%d, &month, &day, &year); // skips the slash
+
+printf("%s", "Enter a date in the form mm-dd-yyyy: ");
+scanf("%d%*c%d%*c%d", &month, &day, &year);
+
+printf("%s", "Enter a date in the form mm/dd/yyyy: ");
+scanf("%d%*c%d%*c%d", &month, &day, &year);
+
+printf("month = %d day = %d year = %d\n", month, day, year);
+// it will discard any single character after it's read first int and second int
+// * is a wild card
+
+
+
+Structs and types
+-----------------
+
+Structures are sometimes referred to as aggregate data.
+types are collections of related variables under one name.
+
+Structs have some characteristics in common with classes.
+Structs have members (also called attributes), sometimes called fields.
+Defining a struct does not actually automatically create an instance of the struct.
+
+structs differ from classes in the following ways:
+- structs do not have methods
+- which means that all of the members must be public (no such thing as encapsulation)
+- there is no support for inheritance
+- there is no support for polymorphism
+
+struct Time1 {
+    int hour;
+    int min;
+    int sec;
+} t1, tArr[10], *tPtr;
+
+How many bytes in t1?
+12
+How many bytes in tArr[10]?
+120
+How many bytes in *tPtr? 8 because it's a 64 bit app.
+8
+it would be 4 bytes in a 32 bit app.
+
+-----------------
+
+struct { 
+	int hour;
+	int min;
+	int sec;
+} t3, tArr3[10], *tPtr3;
+This will access members of the struct even though it does not have a tag. (name).
+t3.hour = 10;
+t3.min = 59; // get variable the pointer is pointing to
+t3.sec = 59;
+
+tPtr3 = &tArr3[5];
+tPtr3->hour = 20;
+tPtr3->min = 20;
+tPtr3->sec = 20;
+
+tPtr3 = &tArr3[9];  // not good practice
+(*tPtr3).hour = 15; // not the way to do it
+(*tPtr3).min = 15;  // pointer above is better
+(*tPtr3).sec = 15;  
+
+t3 = tArr3[5] // member wise assignment
+
+
+	   t3 = tArr3[5]; what this does is a member-wise assignment, also called a shallow assignment.
+	t3		tArr3[5]
+hour 	10		20	hour	
+min	59		20	min
+sec	59		20	sec
+It does a member by member assignment
+	    <---------
+So it becomes: and copies the members of tArr3 to t3
+hour	20		20 	hour
+min	20		20 	min
+sec	20		20	sec
+
+struct employee {
+	char firstName[20];
+	char lastName[20];
+	unsigned int age2;
+	char gender;
+	double hourlySalary;
+};
+struct card {
+    char *face;
+    char *suit;
+};
+main
+struct card aCard;
+struct card *cardPtr;
+-----------
+
+
+
 
 
