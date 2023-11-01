@@ -873,3 +873,43 @@ struct card *cardPtr;
 
 
 
+
+Unions
+-----------
+Unions were introduced in the early days of the C language to save on memory.
+They are very similar a struct - there is only one major difference between a union and a struct.
+Unions are defined the same way structs are defined, except one major major difference.
+And that difference is at any one time, you can only use one of the members. 
+The number of bytes that is a union is simply the size of the largest member. The largest member specifies the size of the union.
+In most cases unions contain two or more data types. It wouldn't make sense for a union to have only one data type.
+If it had only one data type you may as well make it a struct.
+
+union number { // create a union called number
+    int x;	4 bytes because of int
+    double y;	8 bytes because of double
+}; // end union number
+
+
+Bitwise operators
+bitwise AND (&), bitwise inclusive OR (|), bitwise exclusive OR (^), aka bitwise XOR,
+left shift (<<), right shift (>>), and complement (~).
+
+
+Legend: 
+& = AND, | = inclusive OR, ^ = exclusive or, ~ = 1's complement.
+  0011	  0011	  0011	  
+  0101	  0101	  0101	  0101
+------------------------------
+& 0001	| 0111	^ 0110 	~ 1010
+
+	0011	1100	1111	0101	<< 4 // left shift 4 bits 
+	----------------------------
+becomes 1100	1111	0101	0000	// 1100 (left side) will be lost
+ 	
+	0011	1100	1111	0101	>> 4 // shift right 4 bits
+	----------------------------
+becomes 0000	0011	1100	1111	// 0101 (right side) will be lost
+
+
+
+
