@@ -913,3 +913,19 @@ becomes 0000	0011	1100	1111	// 0101 (right side) will be lost
 
 
 
+
+Dynamic Memory Allocation
+-------------------------
+
+
+
+
+Linked Lists
+------------
+
+A node can contain data of any type including other struct objects.
+Stacks and queues are also linear data structures, and are constrained versions of linked lists.
+
+
+
+
