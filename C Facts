@@ -23,3 +23,18 @@ indicating that the two strings are the same. If not the same, it returns
 a value that is either positive or negative.
 
 
+Old way to do this.
+char line[1000];
+printf("Enter line\n");
+scanf("%[^\n]1000s", line); // scan up to end of line or if you hit 1000 characters.
+printf("Line: %s\n", line);
+
+The safer way is to use fgets.
+char line[1000];
+printf("Enter line\n");
+fgets(line, 1000, stdin);
+printf("Line is: %s", line);
+
+
+
+
