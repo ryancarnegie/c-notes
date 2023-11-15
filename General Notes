@@ -928,6 +928,74 @@ Stacks and queues are also linear data structures, and are constrained versions 
 
 
 
+File Reading
+------------
+
+r = Open an existing file for reading. If it cannot find the file, it returns NULL. The file must exist, otherwise it returns an error condition.
+w = Create a file for writing. If the file already exists, discard the current contents.
+a = Append; open or create a file for writing at the end of the file.
+r+ = Open an existing file for update (reading and writing).
+w+ = Create a file for update. If the file already exists, discard the current contents.
+a+ = Append: open or create a file for update; writing is done at the end of the file.
+
+
+Read/Write functions in the standard library
+fgetc
+• Reads one character from a file
+• Takes a FILE pointer as an argument (all of these take a file pointer).
+• fgetc(stdin) is equivalent to getchar()
+
+fputuc
+• Writes one character to a file
+• Takes a FILE pointer and a character to write as an argument
+• fputc( 'a', stdout ) equivalent to putchar( 'a' )
+
+fgets
+• Reads a line from a file
+
+fputs
+• Writes a line to a file
+
+fscanf / fprintf
+• File processing equivalents of scanf and printf
+
+fprintf
+• Used to print to a file
+• Like printf, except the first argument is a FILE pointer (pointer to the file you want to print in)
+
+feof (FILE pointer)
+• Returns trie if end-of-file indicator (no more data to process) is set for the specified file
+
+fclose(FILE pointer)
+• CLoses specified file
+• Performed automatically when program ends
+• Good practice to close files explicitly
+
+Details
+- Programs may process no files, one file, or many files
+- Each file must have a unique name and should have it own pointer
+This means to use different pointers for different files instead of using the same pointer for different files.
+
+Reading a sequential access file
+- Create a FILE pointer, link it to the file to read
+      cfPtr = fopen("clients.txt", "r");
+- Use fscanf to read from the file
+    • Like scanf, except first argument is a FILE pointer
+    fscanf(cfPtr, "%d%s%f", &acount, name, &balance);
+- Data read from beginning to end
+- File position pointer
+    • Indicates number of next byte to be read / written
+    • Not really a pointer, but an ineger value (specifies byte location)
+    • Also called byte offset
+- rewind(cfPtr)
+    • Repositions the file position pointer to beginning of file (byte 0)
+
+Sequential access file
+- Cannot be modified without the risk of destroying other data
+- Fields can vary in size
+    • Different representation in files and screen than internal representation
+    • 1, 34, -890 are all ints, but have different sizes on disk
+
 
 
 
