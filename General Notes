@@ -997,7 +997,57 @@ Sequential access file
     • 1, 34, -890 are all ints, but have different sizes on disk
 
 
+Random Access Files
+Mode	Description
+rb	Open an existing file for reading in binary mode
+wb	Create a file for writing in binary mode. If the file already exists, discard the current contents.
+ab	Append, open or create a file for writing at the end of the file in bary mode.
+rb+	Open an existing file for update (reading and writing) in binary mode.
+wb+	Create a file for update in binary mode. If the file already exists, discard the current contents.
+ab+	Append, open or create a file for update in binary mode, writing is done at the end of the file.
 
+Data in random access files
+- unformatted (stored as "raw bytes")
+ • All data of the same type (ints, for example, uses the same amount of memory
+ • All records of the same type have a fixed length
+ • Data not human readable
+
+- Unformatted I/O functions
+ - fwrite
+ • Transfer bytes from a location in memory to a file
+ - fread
+ • Transfer bytes from a file to a location in memory
+Example
+fwrite(&number, sizeof(int), 1, myPtr);
+ • &number - location to transfer bytes from 
+ • sizeof(int) - number of bytes to transfer
+ • 1 - for arrays, number of elements to transfer
+     - in this case, "one element" of an array is being transferred
+ • myPtr - file to write to
+
+- Writing structs
+ • fwrite (&myObject, sizeof(struct myStruct), 1, myPtr);
+ - sizeof - returns
+
+ • fseek
+   - sets file position pointer to a specific position
+   - fseek (pointer, offset, symbolic_constant);
+     • pointer - pointer to a file 
+     • offset - file position pointer (0 is first location)
+     • symbolic_constant - specifies where in file we are reading from
+     • SEEK_SET - seek starts at beginning of the file
+     • SEEK_CUR - seek starts at current location in file
+     • SEEK_END - seek starts at end of file 
+
+fread
+ - reads a specified number of bytes from a file into memory
+	fread(&client, sizeof(struct clientData), 1, myPtr); // read in 1 and not a whole array of them
+- Can read several fixed-size array elements
+
+ftell
+-  Returns current file pointer position of the stream:
+	long filePos = ftell(myPtr);
+- returns -1 in the case of an error
 
 
 
