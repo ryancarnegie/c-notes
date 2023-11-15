@@ -1,1 +1,121 @@
 
+Read a file
+
+hand = open('book.txt')
+for line in hand:
+    print(line.strip())
+
+#include <stdio.h>
+int main() {
+    char line[1000];
+    FILE *hand;
+    hand = fopen("book.txt", "r");
+    while(fgets(line, 1000, hand) != NULL) {
+        printf("%s", line);
+    }
+}
+
+FILE is a type defined in stdio.h
+*hand is a pointer to a file object
+
+hand = open('book.txt')
+for line in hand:
+    print(line.strip())
+
+char line[500];
+FILE* book;
+book = fopen("book.txt", "r");
+if (book == NULL) {
+    perror("Unable to locate that file");
+    return 1;
+}
+while (fgets(line, sizeof(line), book) != NULL) {
+    printf("%s", line);
+}
+fclose(book);
+
+
+Python max / min
+maxval = None
+minval = None
+while True:
+    line = input()
+    line = line.strip()
+    if line == "done" : break
+    ival = int(line)
+    if (maxval is None or ival > maxval) : maxval = ival
+    if (minval is none or ival < minval) : minval = ival
+print('Maximum', maxval)
+print('Minimum', minval)
+
+C
+#include <stdio.h>
+int main() {
+    int first = 1;
+    int val, maxval, minval;    
+    while(scanf("%d", &val) != EOF) { // & call by reference to replace the current val
+        if(first || val > maxval) maxval = val;
+        if(first || val < minval) minval = val;
+        first = 0;
+    }
+    printf("Maximum %d\n", maxval);
+    printf("Minimum %d\n", minval);
+} // scanf is looking for an integer
+
+Guessing game Python
+while True:
+    try:   
+        line = input()
+    except: # if we get EOF
+        break
+    line = line.strip()
+    guess = int(line)
+    if guess == 42:
+        printf('Nice work!')
+        break
+    elif guess < 42:
+        print('Too low - try again')
+    else:
+        print('Too high - guess again')
+
+C
+#include <stdio.h>
+int main() {
+    int guess;
+    while(scanf("%d", &guess) != EOF) {    
+        if (guess == 42) {
+            printf("Nice work!\n");
+            break;
+        } else if (guess < 42) {
+            printf("Too low - guess again\n");
+        } else {
+            printf("Too high - guess again\n");
+        }
+    }
+}
+
+Functions (call by value) 
+Python
+def mymult(a, b):
+    c = a * b
+    return c
+reval = mymult(6, 7)
+print('Answer:', retval)
+Answer: 42
+
+#include <stdio.h>
+int main() {
+    int mymult();
+    int retval;
+
+    retval = mymult(6, 7);
+    printf("Answer: %d\n", retval);
+}
+
+int mymult(a, b)
+    int a, b;
+{
+    int c = a * b;
+    return c;
+}
+
