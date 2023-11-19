@@ -1,7 +1,19 @@
 
 
-
 Linked lists are collections of data items "lined up in a row" - insertions and deletions are made aynwhere in a linked list.
 
 Stacks are important in compilers and operating systems - insertions and deletions are made only at one end of a stack - its top.
+
+Always check if null is returned when using malloc, to see if it succeeded. If it returned null, that means no memory was available. 
+If it failed, it is likely the program is using so much memory from the heap that the program failed. Especially when creating a 64 bit app. The heap is huge in a 64 bit app.
+
+free is used to clear the memory that you no longer need with malloc.
+free(nextPtr); 
+to free the memory dynamically allocated
+by the preceeding malloc call, use free to free it
+free deallocates memory, it's returned to the system to use again.
+
+malloc and realloc are used for dynamic arrays.
+
+The heap can get fragmened like a hard drive.
 
