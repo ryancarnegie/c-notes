@@ -16,3 +16,4 @@ malloc and realloc are used for dynamic arrays.
 
 The heap can get fragmened like a hard drive.
 
+
