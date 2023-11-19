@@ -1,0 +1,4 @@
+Linked lists are collections of data items "lined up in a row" - insertions and deletions are made anywhere in a linked list.
+
+Stacks are important in compilers and operating systems - insertions and deletions are made only at one end of the stack - it's top.
+
