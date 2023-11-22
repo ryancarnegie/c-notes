@@ -1051,3 +1051,135 @@ ftell
 
 
 
+
+
+Command Line Arguments
+----------------------
+
+
+I/O Redirection
+---------------
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(void) {
+	printf("%s\n%s\n%s\n", "Line 1", "Line 2", "Line 3");
+}
+
+
+
+Variable Length Argument Lists
+Functions with unspecified number of arguments
+ • Load <stdarg.h> this loads the library standard.h
+ • use ellipsis(...) the 3 dots to indicate a number of arguments from this point and onward
+ • need at least one defined parameter
+
+example:
+  double myFunction(int i, ... ); 
+after the int you could have 0, 1, 2, 3, whatever the upper limit is
+ • the ellipsis is only used in the prototype of a function with a variable length argument list
+ • printf is an example of a function that can take multiple arguments
+ • the prototype of printf is defined as:
+  int printf(const char *format, ... );
+
+Identifier	Explanation
+va_list		typedef for struct definition - a struct variable used to access the actual values in that variable argument list
+va_start	macro 
+va_arg		use this macro and the struct variable n times where n is number of values you are creating or blank argument list you are reading. if 3 arguments, call 3 times in a loop with variable created in va_list. each time you get a value you can use however you want.
+va_end		once you grab all the values from variable arguments above, now ready for cleanup, va_end does any cleanup necessary.
+
+
+
+DMA Function calloc
+
+Dynamic memory allocation
+It can create dynamic arrays
+void * calloc (nmembers, size); n number
+ • nmembers - number of elements
+ • size - size of each element in bytes
+ • returns a pointer to a dynamic array
+ • clears the memory that it allocates (malloc does NOT)
+All bits are set to 0
+
+
+stack			heap 
+_________  points to	_________________
+|iPtr 0	|  ---------->	|0 1 2 3 4 5 6 7|	
+|	|  		|8 9 10		|
+|	|		|		|
+|	|		|		|
+
+	int * iPtr = NULL
+	iPtr = malloc(10 * sizeof(int)); // malloc returns a pointer to void, except here it returns a pointer to int
+
+
+with calloc now
+stack			heap 
+_________  points to	_________________
+|iPtr 0	|  ---------->	|0 0 0 0 0 0 0 0|	
+|	|  		|0 0 0		|
+|	|		|		|
+|	|		|		|
+		becomes 40 bytes
+
+
+DMA Function realloc
+ • dynamic memory allocation
+ • can dynamic resize arrays at runtime
+void * realloc (pntr, newSize);
+
+ • pntr - pointer to the variable (which is a generic block of memory) being reallocated
+ • newSize - new size of the variable
+ • returns pointer to reallocated memory
+ • attempts to reallocate memory "in place"
+ • returns null if it cannot allocate space
+ • if newSize equals 0 the variable pointed to is freed
+ • if pntr equals 0 then it acts like malloc
+ • original contents will not be modified unless amount of memory allocated is downsized
+
+with realloc 
+stack			heap 
+_________  points to	_________________
+|iPtr 0	|  ---------->	|10 20 5 15  0 0|	
+|	|  		|0 0 0 0 0 0 0 0|
+|	|		|		|
+|	|		|		|
+
+	iPtr = realloc(iPtr, 20 * sizeof(int)); now becomes 80 bytes. it tries to
+newSize is like doing a free on it.
+newSize is giving all the memory back to the heap, same as what the free does. 
+
+Compilers want to prevent fragmentation of the heap.
+
+
+
+
+--------------------------
+
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+int main(int argc, char *argv[]) {
+	int *numbers;
+	numbers = (int*)calloc(10, sizeof(int));
+	numbers[4] = 100;
+	numbers[8] = 200;
+	printf("%p %d %d %d\n", numbers, numbers[0], numbers[4], numbers[8]);
+	numbers = (int*)realloc(numbers, 80);
+	numbers[15] = 300;
+	printf("%p %d %d %d %d\n", numbers, numbers[0], numbers[4], numbers[8], numbers[15]);
+	numbers = (int *)realloc(numbers, 8000);
+	numbers[500] = 2200;
+	printf("%p %d %d %d %d %d\n", numbers, numbers[0], numbers[4], numbers[8], numbers[15], numbers[500]);
+	free(numbers);
+	return 0;
+}
+
+
+
+
+
