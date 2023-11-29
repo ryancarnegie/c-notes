@@ -1180,6 +1180,73 @@ int main(int argc, char *argv[]) {
 }
 
 
+#defines can be undefined later with #undef, and then refined as something else later.
+#define PI 3.14
+int main() {
+	printf("%.2f\n", PI);
+	#undef PI;
+	#define PI 3.14
+	printf("%.2f\n", PI);
+	return 0;
+}
+output:
+3.14
+3.14
+-----------------------------------------
+
+Conditional compilation
+
+
+
+
+Storage Class		Duration	Scope		Linkage		How Declared
+====================================================================================
+automatic		Automatic	Bloack		None		In a block (automatic keyword optional)
+register		Automatic	Block		None		In a block with the keyword register
+static (extern)		Static		File		External	Outside of all functions
+static (intern)		Static		File		Internal	Outside of all functions with keyword static
+static (none)		Static		Block		None		In a block with the keyword statc
+
+
+
+
+Macro
+	Operation defined in #define
+	A macro without arguments is treated like a symbolic constant
+	A macro with arguments has its arguments substituted for replacement
+	text, when the macro is expanded
+	Performs a text substitution - no data type checking
+	The macro
+		#define CIRCLE_AREA(x) (PI) * (x) * (x);
+	will cause
+		area = CIRCLE_AREA(4);
+	to become
+		area = (3.14159 * (4) * (4));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
