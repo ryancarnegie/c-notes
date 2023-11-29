@@ -10,14 +10,13 @@ extern int value = 100;
 int val2 = 10;
 
 int main() {
-
 	int x = 5;
 	printf("var x = %d\n", x);
 	printf("cubed # is: %d\n", cube(5));
 
 	printf("%d\n", val2);
 	printf("%d\n", value);
-
+	
 #ifdef DEBUG
 	printf("\nDebug statement 1\n\n");
 	hello = hello + 1;
