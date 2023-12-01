@@ -1,0 +1,143 @@
+Chapter 12 Part 1
+
+Structures containing a member that's a pointer to the same structure type is referred to as a...
+  self-referential
+
+
+A self-referential structure contains a ... member that points to ....
+  a pointer, a structure of the same type
+
+
+A __________ pointer normally indicates the end of a data structure.
+NULL
+
+
+
+A __________ occurs when dynamically allocated memory is not returned when it's no longer needed.
+memory leak
+
+
+
+__________ memory allocation is the ability for a program to obtain more memory space at execution time and to release space no longer needed.
+Dynamic
+
+
+
+If no memory is available malloc returns a(n) __________ pointer.
+NULL
+
+
+
+
+Which of the following statements is true?
+A structure's size is the sum of the sizes of its members. - false
+A structure's size is not necessarily the sum of the sizes of its members. -> true
+
+
+
+Which is correct?
+Use the sizeof operator to determine the size of a structure.
+
+
+
+Not returning dynamically allocated memory when it is no longer needed can cause a system to run out of memory prematurely. This is called a(n) __________.
+memory leak
+
+
+
+When memory allocated with malloc is no longer needed, return that memory to the system immediately with __________.
+free
+
+
+
+
+Which of these is not a common programming error?
+Question 11 options:
+Calling malloc in a statement without using sizeof. <-- correct
+Referring to memory that has been freed.
+Assuming that the size of a structure is simply the sum of the sizes of its members. <-- ? wrong
+select this answer if none of the other answers are valid.
+Freeing memory (with free) that was not dynamically allocated.
+
+
+
+__________ is not an advantage of linked lists when compared to arrays.
+Direct access to any list element
+
+
+Data Structures
+Stacks insertions and deletions are made only at one end of a stack - its top.
+Queues represent waiting lines, insertions are made only at the back, (referred to as the tail)
+of a queue and deletions are made only from the front (also referred to as the head) of a queue.
+Binary trees facilitate high-speed searching and sorting of data, efficient elimination of
+duplicate data items, representing file system directories and compiling expressions into machine language.
+
+
+Self-referential structure contains a pointer member that points to a structure of
+the same structure type.
+
+
+
+How many pointers are contained in a circular, doubly linked list with five nodes?
+10
+Total Pointers = Number of Nodes × Number of Pointers per Node
+Total Pointers = 5 × 2 = 10
+
+
+
+
+A linked list is a __________ collection of self-referential structures, called nodes, connected by pointer links.
+linear
+
+
+
+Which statement is false?
+Dynamic memory allocation can sometimes use memory more efficiently than using fixed-size data structures.
+Select this answer if none of the other answers are valid.
+Dynamic memory allocation incurs execution-time overhead.
+Arrays are normally stored contiguously in memory.
+Linked lists are normally stored contiguously in memory. <---
+
+
+
+
+Passing a pointer to a pointer is called __________.
+double indirection
+
+
+
+
+Class 16
+The ftell function returns:
+number of bytes from beginning of file to the current location in file 
+
+
+Which one of the following is NOT a symbolic constant used with fseek?
+SEEK_END
+SEEK_SET
+SEEK_BEG <-- not real 
+SEEK_CUR
+
+
+
+What is/are the disadvantage(s) of using a sequential file?
+Cannot modify a record without the risk of affecting other records
+Cannot directly access an individual record
+Both a) and b)
+
+
+
+In the statement: fseek(cfPtr, 63, SEEK_SET);
+The second parameter 63, instructs the program to move the file pointer 63 records from the beginning of the file.
+	b) False
+
+
+The function fread can read more than one record at a time
+	a) True
+
+
+
+
+
+
+
