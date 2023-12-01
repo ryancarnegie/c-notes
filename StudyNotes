@@ -139,5 +139,109 @@ The function fread can read more than one record at a time
 
 
 
+Class 17
+
+A pipe (|) causes:
+the output of the first program to be redirected to the input of the second 
+
+
+
+The atexit() function:
+registers a function to be called upon the termination of the program
+
+
+
+The goto statement is which of the following?
+an unconditional branch
+an instance of unstructured programming
+used to change the program’s flow of control 
+all of the above <-- correct answer
+
+
+
+The realloc() function leaves the contents of the object being reallocated unchanged up to the size of the new object created.
+	a) True
+
+
+
+The malloc() function is preferred over calloc() because it clears the memory it allocates
+	b) False
+
+
+
+The following command: myprog > output.txt will redirect the output of myprog and append the output to output.txt.
+	b) False
+
+
+The literal value 4.3 is assumed to be a float
+	False
+the literal value 4.3 is assumed to be a double by default. 
+If you want to specify it as a float, you can use the f or F suffix, like 4.3f.
+
+
+
+
+The realloc function will always allocate the requested memory "in place"
+	b) False
+it may allocate the requested memory in place, but it can also move the block of memory to a new location.
+
+
+
+
+
+Class 18
+
+Function pointers can be:
+assigned to another function pointer
+passed as an argument
+stored in arrays
+all of the above <-
+
+
+
+Function pointers contain:
+base address of an array of arguments to the function
+base address of the function code <-
+address of the return value
+none of the above
+
+
+
+The compare function takes void pointer arguments because:
+it allows the passing of any data type <-
+
+
+
+
+Qsort can sort on multiple fields by:
+sorting on secondary field if primary field is equal
+
+
+
+
+Compare returns the following value when elements are equal:
+0
+
+
+
+
+The compare function is called only once when calling qsort:
+	b) False
+
+
+
+The compare function has a return type of void:
+	b) False from gtp
+answer key says true. 
+
+
+
+
+
+Qsort can sort on multiple fields:
+	a) True <- according to d2l, but gtp said false.
+qsort in standard C can sort elements based on a single key only. <- from gtp
+
+
 
 
