@@ -244,4 +244,67 @@ qsort in standard C can sort elements based on a single key only. <- from gtp
 
 
 
+Class 19
+
+The #undef preprocessor directive:
+allows macros to be redefined with #define later in the program 
+
+
+
+Which one of the following is not an error?
+defining a function prototype without the extern keyword when the definition is in another file
+
+
+
+
+extern:
+is a keyword to indicate that a variable is defined in a different file 
+
+
+
+Which of the following restricts the scope of a global variable to the file it is defined in?
+static
+
+
+
+
+what are capabilities of the preprocessor?
+inclusion of other files in the file being compiled 
+definition of symbolic constants
+definition of macros
+
+
+
+If the macro
+ #define RECTANGLE_AREA( x, y ) ( ( x ) * ( y ) )
+ has been defined.
+
+Then the line
+ rectArea = RECTANGLE_AREA( a + 4, b + 7 );
+ will be expanded to:
+
+rectArea = ( ( a + 4 ) * ( b + 7 ) );
+
+
+
+The statement: #include <header.h> will check the current directory for the existence of the file header.h
+	b) False
+ you should use #include "header.h".
+
+
+
+A C compiler compiles a .c file directly:
+	b) False
+A C compiler typically goes through several stages, including preprocessing, compiling, assembling, and linking. 
+
+
+
+One of the goals of multi source file programs is to avoid recompling an entire program when small changes are made:
+	True
+One of the advantages of using multiple source files in a program is that it allows for incremental compilation
+
+
+
+
+
 
