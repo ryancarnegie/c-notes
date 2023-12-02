@@ -106,6 +106,158 @@ double indirection
 
 
 
+Class 12 Part 2
+__________ are collections of data items "lined up in a row" - insertions and deletions are made anywhere in a __________.
+Linked lists, linked list
+
+
+__________ are important in compilers and operating systems - insertions and deletions are made only at one end of a __________ --its top.
+Stacks, stack
+
+
+__________ represent waiting lines; insertions are made at the back (also called the tail) and deletions are made from the front (also called the head) of a __________.
+Queues, queue
+
+
+__________ facilitate high-speed searching and sorting of data, efficient elimination of duplicate items and compiling expressions into machine language.
+Binary Trees
+
+
+
+Which of the following is a non-linear data structure?
+binary tree
+
+
+
+Which of the following statements about stacks is incorrect?
+stacks are first in, first-out (FIFO) data structures. <-- this is incorrect because
+stacks are last in first out - LIFO
+Queues are first in first out - FIFO
+
+
+
+The link member in the last node of a stack is typically set to __________ indicate the bottom of the stack.
+NULL
+
+
+
+Which of the following statements is false?
+Function pop removes a node from the bottom of the stack.
+
+
+
+Which is not a popular application of stacks?
+maintaining waiting lines
+
+
+A linked list has the functions insertAtFront, removeFromFront, insertAtBack, and removeFromBack, which perform operations on nodes exactly as their names describe. Which two functions would most
+naturally model the operation of a queue?
+insertAtBack and removeFromFront.
+
+
+
+Queues are linear data structures with the property that queue nodes are inserted only at the tail of the queue and removed only from the head of the queue. For this reason, queues are referred to as __________ data structures.
+first-in, first-out
+
+
+Which of the following is not true of queues?
+The entry at the front (or head) of the queue is the next to be removed.
+Select this answer if none of the other answers are valid.
+Queues are used to support print spooling.
+Network packets wait in queues for service at routers. 
+Queues are used to support high-speed sorting algorithms. <---
+
+
+Select the incorrect statement. 
+Binary trees (regardless of the order in which the values are inserted into the tree):
+always have the same shape for a particular set of data. <--
+
+Binary trees do not always have the same shape for a particular set of data. 
+The shape of a binary tree depends on the order in which the values are inserted. 
+For example, inserting values in sorted order would create a skewed (degenerate) tree, 
+while inserting values randomly would result in a more balanced tree.
+
+
+
+Suppose you have a list of names sorted in alphabetical order, already stored in one of the data types below. The easiest way to print the names in reverse alphabetical order would be to use a
+stack
+Using a stack would be the most straightforward way to print names in reverse alphabetical order. 
+Since a stack follows the last-in, first-out (LIFO) principle, you can push the names onto the 
+stack in their original order and then pop them off to print them in reverse order. 
+a b c d e f g ....
+then pop from the top, which is g.
+
+
+
+Which statement about trees is false?
+A tree is a non-linear, two-dimensional data structure.
+Select this answer if none of the other answers are valid.
+Binary tree nodes contain exactly two links.
+Tree nodes contain two or more links.
+Binary tree nodes contain two or fewer links. <--- 
+
+
+
+Which statement is not true for binary trees.
+A node with no children is called an orphan. <--- not true, nodes with no children are called leaf nodes
+The left child in the root node is the first node in the left subtree.
+The root node is the first node in the tree.
+Select this answer if none of the other answers are valid.
+The children of a node are called siblings.
+
+
+Which of the following statements about binary search trees with no duplicate values is false?
+Select this answer if none of the other answers are valid.
+The shape of the tree that corresponds to a particular set of data can vary based on the order in which the values are inserted into the tree.
+The values in any right subtree are less than the values in its parent node. <---
+The values in any left subtree are less than the values in its parent node. 
+It is possible that a binary tree could contain all its values along one straight path through the tree.
+
+
+
+A node can only be inserted __________ in a binary search tree.
+as the root node
+as a parent node
+select this answer if none of the other answers are valid
+as an ancestor node
+as a leaf node <---
+
+
+
+The steps for an in-order traversal of a binary search tree include each of the following except _________.
+Traverse the left subtree in-order.
+Select this answer if none of the other answers are valid
+Skip over duplicate values. <----
+Process the value in the root node.
+Traverse the right subtree in-order.
+
+
+
+Which type of binary search tree traversal processes the node values in ascending order?
+select this answer if none of the other answers are valid.
+post-order traversal
+in-order traversal <---
+duplicate elimination traversal
+pre-order traversal
+
+
+
+Which of the following statements about binary search trees is false?
+
+When searching a tightly packed billion-element search tree, only about 30 elements (or fewer) are required to locate most elements.
+In a tightly packed binary search tree, each level contains about half as many elements as the previous level. (The previous level is the level closer to the root node.) <---
+^^^ incorrect line above
+Select this answer if none of the other answers are valid.
+The binary search tree facilitates duplicate elimination.
+When searching a tightly packed million-element search tree, only about 20 elements (or fewer) are required to locate most elements.
+
+
+
+
+
+
+
+
 
 Class 16
 The ftell function returns:
