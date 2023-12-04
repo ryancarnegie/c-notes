@@ -6,7 +6,12 @@ printf("string1 is: %s\nstring2 is: %s\n", string1, string2);
 // Once string1 is printed, it only prints "how".
 
 
-for (size_t i = 0; SIZE && string1[i] != '\0'; ++i) {
+for (size_t i = 0; SIZE && string1[i] != '\0'; ++i) 
+{
     printf("%c", string1[i]);
 }
+
+printf("Enter your name: ");
+fgets(playerName, 20, stdin); name size standard input
+
 
