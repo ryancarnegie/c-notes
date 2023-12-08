@@ -80,7 +80,8 @@ void reverse(char* string) {
 
 
 
-// An older attempt when I was still learning before understanding swaps, placed here as a reminder.
+// An older attempt when I was still learning before understanding swaps, 
+// placed here as a reminder of what not to do.
 #define STRING 15
 #define MAX_STRING_LENGTH 20
 int main() {
