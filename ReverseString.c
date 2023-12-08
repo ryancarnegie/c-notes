@@ -32,13 +32,13 @@ int main(int argc, char* argv[]) {
 	printf("%s\n", string);
 	return 0;
 }
+
 void rev(char string[]) {
 	int length = strlen(string);
 	printf("length is: %d\n", length);
-
 	int start = 0;
 	int end = length - 1;
-
+	
 	while (start < end) {
 		char temp = string[start];
 		string[start] = string[end];
