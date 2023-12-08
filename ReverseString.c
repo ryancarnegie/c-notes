@@ -71,6 +71,9 @@ void reverse(char* string) {
 		string[length - i - 1] = temp;
 	}
 }
+This function uses a common technique for reversing a string by swapping characters symmetrically around its center. 
+It has a time complexity of O(n), where n is the length of the string, because it processes each character once. 
+The space complexity is O(1), as it uses a constant amount of extra space for the temporary variable (temp).
 
 
 
@@ -78,10 +81,10 @@ void reverse(char* string) {
 
 
 
-
+	
 
 // An older attempt when I was still learning before understanding swaps, 
-// placed here as a reminder of what not to do.
+// placed here as a reminder of how invalid this was, and what not to do.
 #define STRING 15
 #define MAX_STRING_LENGTH 20
 int main() {
