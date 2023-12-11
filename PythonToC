@@ -1,4 +1,6 @@
 
+
+==================================
 Read a file
 
 hand = open('book.txt')
@@ -62,6 +64,9 @@ int main() {
     printf("Minimum %d\n", minval);
 } // scanf is looking for an integer
 
+
+
+==================================
 Guessing game Python
 while True:
     try:   
@@ -94,6 +99,9 @@ int main() {
     }
 }
 
+
+
+==================================
 Functions (call by value) 
 Python
 def mymult(a, b):
@@ -119,3 +127,7 @@ int mymult(a, b)
     return c;
 }
 
+
+
+
+==================================
